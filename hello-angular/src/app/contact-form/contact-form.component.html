@@ -1,0 +1,7 @@
+<form (submit)="handleSubmit($event)">
+  <p>Name : <input [value]="contact.name" (input)="contact.name = $event.target.value" /></p>
+  <p>Email : <input [value]="contact.email" (input)="contact.email = $event.target.value" /></p>
+  <p>
+    <button>Add</button>
+  </p>
+</form>
