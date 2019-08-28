@@ -1,0 +1,6 @@
+<form (submit)="handleSubmit($event)">
+  <p>
+    <input (input)="newTodo.title = $event.target.value">
+    <button>+</button>
+  </p>
+</form>
