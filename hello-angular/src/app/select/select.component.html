@@ -1,4 +1,4 @@
 <div class="selected"><b>{{selected}}</b></div>
 <div class="items">
-  <div class="item" *ngFor="let item of items" (click)="selected = item">{{item}}</div>
+  <div class="item" *ngFor="let item of items" (click)="handleSelected(item)">{{item}}</div>
 </div>

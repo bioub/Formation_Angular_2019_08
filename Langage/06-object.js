@@ -41,3 +41,6 @@ const edouard = new Contact('Edouard');
 
 console.log(romain.name); // Romain
 console.log(romain.hello()); // Hello Romain
+
+console.log(romain.hasOwnProperty('name')); // true
+console.log(romain.hasOwnProperty('hello')); // false

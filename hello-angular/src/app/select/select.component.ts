@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-select',
@@ -9,6 +10,8 @@ export class SelectComponent implements OnInit {
 
   @Input() selected: string;
   @Input() items: string[] = [];
+
+  @Output() selectedChange = new EventEmitter<string>();
 
   constructor() {
     
@@ -21,4 +24,7 @@ export class SelectComponent implements OnInit {
     this.selected = this.selected || this.items[0];
   }
 
+  handleSelected(item: string) {
+    this.selectedChange.emit(item);
+  }
 }

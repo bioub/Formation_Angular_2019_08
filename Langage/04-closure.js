@@ -1,6 +1,8 @@
 function externe(msg) {
+  const b = 'closure';
   function interne() {
-    console.log(msg);
+    const a = 'local';
+    console.log(msg, b);
   }
   interne();
 }
