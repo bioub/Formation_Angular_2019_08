@@ -6,6 +6,7 @@ import { HelloComponent } from './hello/hello.component';
 import { CountComponent } from './count/count.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { SelectComponent } from './select/select.component';
+import { ClockComponent } from './clock/clock.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { SelectComponent } from './select/select.component';
     HelloComponent,
     CountComponent,
     ContactFormComponent,
-    SelectComponent
+    SelectComponent,
+    ClockComponent
   ],
   imports: [
     BrowserModule

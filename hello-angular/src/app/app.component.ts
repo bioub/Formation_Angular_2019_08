@@ -9,4 +9,6 @@ export class AppComponent {
   title = 'hello-angular';
   marques = ['Renault', 'Peugeot', 'Citroën'];
   marqueSelected = 'Peugeot';
+
+  showHorloge = true;
 }

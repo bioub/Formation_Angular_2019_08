@@ -1,7 +1,15 @@
 <form (submit)="handleSubmit($event)">
   <p>Name : <input [value]="contact.name" (input)="contact.name = $event.target.value" /></p>
-  <p>Email : <input [value]="contact.email" (input)="contact.email = $event.target.value" /></p>
+  <p>Email : <input #emailElt [value]="contact.email" (input)="contact.email = emailElt.value" /></p>
   <p>
     <button>Add</button>
   </p>
 </form>
+
+<p>
+  Vous avez saisi :  {{contact | json}}
+</p>
+
+<p>
+  Vous avez saisi :  {{contact.name}}
+</p>
