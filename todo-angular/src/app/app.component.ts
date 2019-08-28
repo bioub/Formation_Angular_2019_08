@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { triggerAsyncId } from 'async_hooks';
 import { Todo } from './todo.model';
 
 @Component({
@@ -22,6 +21,11 @@ export class AppComponent {
   ];
 
   addTodo(todo: Todo) {
-    this.todos.push(todo);
+    // this.todos.push(todo);
+    this.todos = [...this.todos, todo];
+  }
+
+  handleDelete(todo:Todo) {
+    this.todos = this.todos.filter((t) => t !== todo);
   }
 }
