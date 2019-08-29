@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { LoaderService } from 'src/app/core/loader/loader.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-users-list',
@@ -14,18 +15,14 @@ export class UsersListComponent implements OnInit {
   loading;
 
   constructor(
-    private httpClient: HttpClient,
+    private userService: UserService,
     private loaderService: LoaderService,
   ) { }
 
   ngOnInit() {
     this.loading = true;
     this.loaderService.isLoading = true;
-    this.httpClient.get<any[]>('https://jsonplaceholder.typicode.com/users')
-      .pipe(
-        map((users) => users.slice(0, 5)),
-        // delay(3000)
-      )
+    this.userService.getAll()
       .subscribe((users) => {
         this.loading = false;
         this.loaderService.isLoading = false;

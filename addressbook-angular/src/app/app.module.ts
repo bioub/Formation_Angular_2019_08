@@ -9,6 +9,7 @@ import { NotFoundComponent } from './core/not-found/not-found.component';
 import { UsersModule } from './users/users.module';
 import { HttpClientModule } from '@angular/common/http';
 import { LoaderComponent } from './core/loader/loader.component';
+import { BlogModule } from './blog/blog.module';
 
 // export function loaderServiceFactory() {
 //   return new LoaderService('...');
@@ -26,7 +27,8 @@ import { LoaderComponent } from './core/loader/loader.component';
     HttpClientModule,
     BrowserModule,
     UsersModule,
-    AppRoutingModule
+    BlogModule,
+    AppRoutingModule,
   ],
   providers: [
     // { provide: LoaderService, useClass:  LoaderService }
