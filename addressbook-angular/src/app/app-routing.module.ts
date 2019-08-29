@@ -5,7 +5,7 @@ import { HomeComponent } from './core/home/home.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: '', // URL : /
     component: HomeComponent
   }
 ];

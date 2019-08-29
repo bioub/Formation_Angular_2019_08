@@ -1,0 +1,12 @@
+<div *ngIf="loading">Loading...</div>
+
+<div class="list-group">
+
+  <a href="#" class="list-group-item list-group-item-action"
+     *ngFor="let user of users">
+     {{user.name}}
+  </a>
+
+</div>
+
+<a href="#" class="btn btn-block btn-primary mt-3">Ajouter</a>

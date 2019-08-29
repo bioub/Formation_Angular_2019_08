@@ -7,20 +7,34 @@ import { TopBarComponent } from './core/top-bar/top-bar.component';
 import { HomeComponent } from './core/home/home.component';
 import { NotFoundComponent } from './core/not-found/not-found.component';
 import { UsersModule } from './users/users.module';
+import { HttpClientModule } from '@angular/common/http';
+import { LoaderComponent } from './core/loader/loader.component';
+
+// export function loaderServiceFactory() {
+//   return new LoaderService('...');
+// }
 
 @NgModule({
   declarations: [
     AppComponent,
     TopBarComponent,
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoaderComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     UsersModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    // { provide: LoaderService, useClass:  LoaderService }
+    // équivalent à :
+    // LoaderService
+
+    // { provide: LoaderService, useFactory:  loaderServiceFactory }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

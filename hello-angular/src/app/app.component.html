@@ -1,16 +1,18 @@
 <app-hello></app-hello>
     
-    <app-hello [name]="marqueSelected"></app-hello>
-    <app-hello name="Romain"></app-hello>
+<app-hello [name]="marqueSelected"></app-hello>
+<app-hello name="Romain"></app-hello>
 
-    <app-count></app-count>
-    <app-contact-form></app-contact-form>
+<app-count></app-count>
+<app-contact-form></app-contact-form>
 
-    <app-select [items]="['Renault', 'Peugeot', 'Citroën']"></app-select>
-    <app-select [items]="marques" [selected]="marqueSelected" (selectedChange)="marqueSelected = $event"></app-select>
-    
-    <p class="selected">La marque sélectionnée est : {{marqueSelected}}</p>
+<app-select [items]="['Renault', 'Peugeot', 'Citroën']"></app-select>
+<app-select [items]="marques" [selected]="marqueSelected" (selectedChange)="marqueSelected = $event"></app-select>
+<app-select [items]="marques" [(selected)]="marqueSelected"></app-select>
+<!-- BANANA IN BOX [()] -->
+
+<p class="selected">La marque sélectionnée est : {{marqueSelected}}</p>
 
 
-    <app-clock *ngIf="showHorloge"></app-clock>
-    <button (click)="showHorloge = !showHorloge">On/Off</button>
+<app-clock *ngIf="showHorloge"></app-clock>
+<button (click)="showHorloge = !showHorloge">On/Off</button>

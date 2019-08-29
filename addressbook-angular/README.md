@@ -1,27 +1,34 @@
-# AddressbookAngular
+# Exercices
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.0.
+## Créer un UserService dans app/users
 
-## Development server
+Injecter HttpClient dans ce service
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Dans ce service créer une méthode `getAll` qui retourne la requete :
+`this.httpClient.get<any[]>('https://jsonplaceholder.typicode.com/users')`
 
-## Code scaffolding
+Tel que le composant users-list puisse dépendre de UserService et que le code
+suivant fonctionne
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+ngOnInit() {
+this.userService.getAll()
+  .subscribe((users) => {
+    this.loading = false;
+    this.loaderService.isLoading = false;
+    this.users = users;
+  });
+}
+```
 
-## Build
+## Créer une page /blog
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Générer un BlogModule *avec routeur* avec angular cli (pensez au -d pour commencer)
 
-## Running unit tests
+Générer un composant posts dans ce module
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Créer une route pour ce composant posts `/blog`
 
-## Running end-to-end tests
+Comme pour users-list passer par un service PostService pour récupérer les articles et les afficher (avec le HTML de votre choix)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+L'URL à requêter : `https://jsonplaceholder.typicode.com/posts` 
