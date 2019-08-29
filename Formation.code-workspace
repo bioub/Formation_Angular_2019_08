@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "hello-angular"
+		},
+		{
+			"path": "addressbook-angular"
+		},
+		{
+			"path": "Langage"
+		},
+		{
+			"path": "todo-angular"
+		}
+	],
+	"settings": {}
+}
