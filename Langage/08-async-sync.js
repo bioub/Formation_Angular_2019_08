@@ -38,3 +38,13 @@ fs.promises.readFile('.editorconfig', {encoding: 'UTF-8'})
     console.log(err);
   }
 })();
+
+/* Top Level await (Stage 3 TC39)
+try {
+  const content = await fs.promises.readFile('.editorconfig', {encoding: 'UTF-8'});
+  await fs.promises.writeFile('.editorconfig.backup', content);
+  console.log('Fichier copié');
+} catch (err) {
+  console.log(err);
+}
+*/

@@ -1,6 +1,7 @@
 // setTimeout(() => {}, 1000);
 // timeout(1000).then(() => {});
 
+
 // function timeout(delayMs) {
 //   return new Promise((resolve, reject) => {
 //     setTimeout(() => {
@@ -13,11 +14,11 @@
 
 // (async () => {
 //   await timeout(1000);
-//   console.log('1s')
+//   console.log('1s');
 // })();
 
 const { Observable } = require('rxjs');
-const { take } = require('rxjs/operators');
+const { take, mapTo, delay } = require('rxjs/operators');
 
 function interval(delayMs) {
   return new Observable((observer) => {
@@ -42,7 +43,7 @@ const subscription = interval(1000)
   .pipe(
     mapTo('x'),
     delay(200),
-    // take(3)
+    take(3)
   )
   .subscribe(() => console.log('1s'));
 
