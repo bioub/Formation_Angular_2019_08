@@ -10,6 +10,10 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
+    path: 'users',
+    loadChildren: () => import('./users/users.module').then(mod => mod.UsersModule),
+  },
+  {
     path: '**',
     // redirectTo: '',
     component: NotFoundComponent,

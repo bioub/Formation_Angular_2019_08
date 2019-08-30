@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './core/top-bar/top-bar.component';
 import { HomeComponent } from './core/home/home.component';
 import { NotFoundComponent } from './core/not-found/not-found.component';
-import { UsersModule } from './users/users.module';
+// import { UsersModule } from './users/users.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoaderComponent } from './core/loader/loader.component';
 import { BlogModule } from './blog/blog.module';
@@ -29,7 +29,7 @@ import { LoaderInterceptor } from './core/loader/loader.interceptor';
     SharedModule,
     HttpClientModule,
     BrowserModule,
-    UsersModule,
+    // UsersModule,
     BlogModule,
     AppRoutingModule,
   ],

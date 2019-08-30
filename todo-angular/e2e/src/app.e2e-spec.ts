@@ -8,10 +8,17 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should add todo', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('todo-angular app is running!');
+    page.fillNewTodo('Ma Todo');
+    page.submitForm();
+    expect(page.getThirdTodo()).toContain('Ma Todo');
   });
+
+  // it('should display welcome message', () => {
+  //   page.navigateTo();
+  //   expect(page.getTitleText()).toEqual('todo-angular app is running!');
+  // });
 
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser

@@ -31,4 +31,8 @@ export class UserService {
 
     return user$;
   }
+
+  create(user: User) {
+    return this.httpClient.post<User>(environment.apiBaseUrl + '/users', user);
+  }
 }

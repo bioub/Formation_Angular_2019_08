@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { ActivatedRoute } from '@angular/router';
 import { User } from '../shared/user.model';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, tap, finalize } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -13,6 +13,7 @@ import { Observable } from 'rxjs';
 export class UserDetailsComponent implements OnInit {
 
   user$: Observable<User>;
+  loading = false;
 
   constructor(
     private userService: UserService,
@@ -21,7 +22,9 @@ export class UserDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.user$ = this.activatedRoute.paramMap.pipe(
-      switchMap((paramMap) =>  this.userService.getById(paramMap.get('id')))
+      tap(() => this.loading = true),
+      switchMap((paramMap) =>  this.userService.getById(paramMap.get('id'))),
+      tap(() => this.loading = false),
     );
 
     // console.log(this.activatedRoute.snapshot.paramMap.get('id'));

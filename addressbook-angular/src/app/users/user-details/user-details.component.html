@@ -1,9 +1,16 @@
 <ng-container *ngIf="user$ | async as user">
-  <h2>{{user.name}}</h2>
-  <p>
-    Email : {{user.email}}
-  </p>
-  <p>
-    City : {{user.address?.city}}
-  </p>
+  <ng-container *ngIf="loading">
+    Loading...
+  </ng-container>
+
+  <ng-container *ngIf="!loading">
+
+    <h2>{{user.name}}</h2>
+    <p>
+      Email : {{user.email}}
+    </p>
+    <p>
+      City : {{user.address?.city}}
+    </p>
+  </ng-container>
 </ng-container>
